@@ -34,13 +34,12 @@ const modal = document.querySelector(".modal");
 const closeButton = document.querySelector(".close-button");
 const headingMsg = document.querySelector(".modal-content h1");
 
-function toggleModal() {
+const toggleModal = () => {
   modal.classList.toggle("show-modal");
 }
 
 closeButton.addEventListener("click", toggleModal);
 
-closeButton.addEventListener("click", toggleModal);
 const modalMsg = (msg) => {
   console.log('clicked');
   modal.classList.toggle("show-modal");
