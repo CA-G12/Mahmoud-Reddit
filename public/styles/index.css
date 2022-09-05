@@ -1,0 +1,267 @@
+nav {
+    height: 48px;
+    padding: 2px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo .reddit__icon {
+    color: #FF4500;
+    font-size: 35px;
+}
+
+.logo .reddit__logo {
+    margin-left: 5px;
+}
+
+nav .search__bar {
+    height: 80%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    background-color: #f6f7f8;
+}
+
+nav .search__bar img {
+    height: 25px;
+    width: 25px;
+    margin-right: 5px;
+}
+
+nav .search__bar:hover {
+    border: 1px solid #0079d3;
+    background-color: #fff;
+}
+
+nav .search__bar input {
+    min-height: 100%;
+    width: 100%;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: inherit
+}
+
+.user__section {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 15px;
+    gap: 1rem;
+}
+
+
+
+.user__section .btn {
+    width: 120px;
+    font-family: Noto Sans, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: unset;
+    line-height: 17px;
+    text-transform: unset;
+    min-height: 32px;
+    min-width: 32px;
+    padding: 4px 16px;
+    border: 1px solid #0079d3;
+    background-color: transparent;
+    padding: 4px 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    color: #0079d3;
+}
+
+.user__section .signup__btn {
+    background-color: #0079d3;
+    color: #fff;
+}
+
+.user__section .drop__down__list {
+    background-color: transparent;
+    width: 70px;
+    outline: none;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.38);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.user__section .user__icon {
+    font-size: 20px;
+}
+
+.user__section .drop__down__list:hover {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.root {
+    background-color: #DAE0E6;
+    padding-top: 50px;
+}
+
+.root h1{
+    text-align: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: rgba(0, 0, 0, 0.87);
+    margin: 40px 0;;
+}
+
+
+.container {
+    margin-top: 48px;
+    min-height: 100vh;
+    width: 80%;
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.card {
+    max-width: 236px;
+    min-height: 228px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12), 0px 2px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 2px;
+}
+
+.card img {
+    width: 100%;
+    max-height: 133px;
+}
+
+.card__content {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: column;
+    width: 198px;
+    margin: 15px;
+    margin-bottom: 0;
+}
+
+.card__created_by {
+    margin-top: 8px;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.card__tag {
+    margin-top: 5px;
+}
+
+.card__created_by__name {
+    color: #FF4500;
+    cursor: pointer;
+}
+
+.card__operation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 8px 0;
+}
+
+.card__operation__likes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.card__operation__likes button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    color:  rgba(0, 0, 0, 0.38);
+} 
+
+.card__operation__likes button:hover {
+    color: rgba(255, 69, 0, 1);
+}
+
+.card__operation__number {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+text-align: center;
+}
+
+.card__operation__comments {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card__operation__comments svg {
+    margin-right: 8px;
+    color: rgba(0, 0, 0, 0.38);
+}
+
+.card__operation__share {
+    color: rgba(0, 0, 0, 0.38);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .reddit__logo,
+    .login__btn,
+    .signup__btn {
+        display: none;
+    }
+
+    .search__bar {
+        width: 20%;
+        display: none;
+        color: red;
+    }
+}
