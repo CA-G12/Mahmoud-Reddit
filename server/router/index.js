@@ -1,7 +1,9 @@
 const router = require('express').Router();
 const { join } = require('path');
 const jwt = require('jsonwebtoken');
-const { getPosts, signup, logIn } = require('../controllers');
+const {
+  getPosts, signup, logIn, logout,
+} = require('../controllers');
 
 router.get('/', (req, res) => {
   res.send('Hello world aaaaaaa');
@@ -23,6 +25,7 @@ router.route('/login')
   )
   .post(logIn);
 
+router.get('/logout', logout);
 router.get('/posts', getPosts);
 
 router.get('/homePage', (req, res, next) => {

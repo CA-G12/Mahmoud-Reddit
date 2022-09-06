@@ -101,7 +101,6 @@ nav .search__bar input {
     align-items: center;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
-    border: 1px solid red;
     display: flex;
     justify-content: space-around;
 } 
@@ -114,9 +113,16 @@ nav .search__bar input {
     height: 35px;
 }
 
-/* .user__section .drop__down__list:hover {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-} */
+#logout__btn {
+    outline: none;
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+#logout__btn:hover {
+    color: #FF4500;
+}
 
 .root {
     background-color: #DAE0E6;
@@ -257,12 +263,9 @@ text-align: center;
 
 @media only screen and (max-width: 768px) {
 
-    .reddit__logo{
-        display: none;
-    }
-
-    .search__bar {
-        width: 20%;
+    /* .reddit__logo, */
+    nav .search__bar
+    {
         display: none;
     }
 }

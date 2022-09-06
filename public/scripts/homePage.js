@@ -7,3 +7,12 @@ fetch('/posts')
     });
   })
   .catch((err) => console.log({ err }));
+
+// logout Request
+const logoutBtn = document.querySelector('#logout__btn');
+
+logoutBtn.addEventListener('click', () => {
+  fetch('/logout')
+    .then(window.location.href = '/');
+  cache((err) => console.log(err));
+});
