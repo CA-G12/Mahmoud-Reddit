@@ -253,15 +253,18 @@ text-align: center;
 
 @media only screen and (max-width: 768px) {
 
-    .reddit__logo,
-    .login__btn,
-    .signup__btn {
+   .user__section {
+    width: 100%;
+   }
+   .reddit__logo,
+    nav .search__bar{
         display: none;
     }
+    .user__section .btn{
+        width: 100px;
+    }
 
-    .search__bar {
-        width: 20%;
-        display: none;
-        color: red;
+    .user__section .login__btn{
+        margin-left: 15px;
     }
 }
