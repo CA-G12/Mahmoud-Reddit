@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <script src="https://kit.fontawesome.com/f20e57f399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../styles/global-style.css" />
+  <link rel="stylesheet" href="../styles/signup.css" />
+</head>
+
+<body>
+  <div class="page_wrapper">
+    <aside>
+      <div class="aside__img"></div>
+    </aside>
+    <main>
+      <form class="signup_form">
+        <div class="form_wrapper">
+          <label class="form_label">
+            username
+            <input id="username" class="form_textInput" type="text" placeholder="username..." />
+          </label>
+          <label class="form_label">
+            Email
+            <input id="email" class="form_textInput" type="email" placeholder="email..." />
+          </label>
+          <label class="form_label">
+            password
+            <input id="password" class="form_textInput" type="password" placeholder="password" />
+          </label>
+          <label class="form_label">
+            about
+            <textarea class="form_textarea" id="about" placeholder="add a bit about yourself..." rows="5"></textarea>
+          </label>
+          <label class="form_label">
+            image link
+            <input class="form_textInput" id="img_link" type="url" placeholder="add your image link..." />
+          </label>
+          <button id="signup_submit_button" class="submit_button" type="button">
+            Submit
+          </button>
+          <p id="error_message" class="error_message"></p>
+        </div>
+      </form>
+    </main>
+
+    <!-- popup message -->
+
+    <div class="modal">
+      <div class="modal-content">
+        <span class="close-button"><i class="fa-solid fa-circle-xmark"></i></span>
+        <i class="fa-brands fa-reddit reddit__icon"></i>
+        <h1></h1>
+      </div>
+    </div>
+  </div>
+  <script src="../scripts/signupValidation.js"></script>
+</body>
+
+</html>
