@@ -1,8 +1,5 @@
-const connection = require('../config/connection')
+const connection = require('../config/connection');
 
-const getPostsQuery =()=>{
-
-    return connection.query('select * from posts')
-};
+const getPostsQuery = () => connection.query('SELECT users.username ,posts.* FROM posts INNER JOIN users ON posts.created_by = users.id');
 
 module.exports = getPostsQuery;

@@ -26,22 +26,45 @@
         <img src="./images/Shape.svg" alt="search">
         <input type="search" name="" id="" placeholder="Search Reddit">
       </div>
-      <button class="create__post" data-title="create post"><i class="fa-solid fa-plus"></i></button> 
+      <button class="create__post" data-title="create post"><i class="fa-solid fa-plus"></i></button>
       <div class="user__section">
         <div class="user__info">
-          <img src="https://styles.redditmedia.com/t5_497lk1/styles/profileIcon_snoo1f7f70a5-1146-45d1-8df1-8f46b278521b-headshot.png?width=256&height=256&crop=256:256,smart&s=c1cc4c3c91b57515c8657dfd7a5585ff3a43f505" alt="">
-          <p>mahmoud</p>
+          <img
+            src="https://styles.redditmedia.com/t5_497lk1/styles/profileIcon_snoo1f7f70a5-1146-45d1-8df1-8f46b278521b-headshot.png?width=256&height=256&crop=256:256,smart&s=c1cc4c3c91b57515c8657dfd7a5585ff3a43f505"
+            alt="">
+          <p id="user_name"></p>
         </div>
         <button id="logout__btn">
           <i class="fa-solid fa-arrow-right-from-bracket"></i>
         </button>
-        </div>
+      </div>
     </nav>
   </header>
   <main class="root">
     <h1>Find something interesting to discuss</h1>
     <div class="container"></div>
   </main>
+  <!-- popup message -->
+
+  <div class="modal">
+    <div class="modal-content">
+      <span class="close-button"><i class="fa-solid fa-circle-xmark"></i></span>
+      <i class="fa-brands fa-reddit reddit__icon"></i>
+      <form action="">
+        <label class="form_label">
+
+          <textarea class="form_textarea" id="post_content" placeholder="what are you thinking about?" rows="5"></textarea>
+        </label>
+        <label class="form_label">
+
+          <input class="form_textInput" id="img_link" type="url" placeholder="Image link(optional)" />
+        </label>
+        <button id="post_submit_button" class="submit_button" type="button">
+          Post
+        </button>
+      </form>
+    </div>
+  </div>
   <script src="../scripts/dom.js"></script>
   <script src="../scripts/homePage.js"></script>
 </body>

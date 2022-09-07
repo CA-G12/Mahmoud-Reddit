@@ -42,7 +42,6 @@ const toggleModal = () => {
 closeButton.addEventListener('click', toggleModal);
 
 const modalMsg = (msg) => {
-  console.log('clicked');
   modal.classList.toggle('show-modal');
   headingMsg.innerHTML = `${msg} <a href='../pages/login.html'>Log In</a>`;
 };
