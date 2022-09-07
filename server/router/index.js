@@ -1,13 +1,15 @@
 const router = require('express').Router();
 const { join } = require('path');
-const jwt = require('jsonwebtoken');
 const {
-  getPosts, signup, logIn, logout,
+  getPosts,
+  signup,
+  logIn,
+  logout,
+  addPost,
+  getUserName,
 } = require('../controllers');
 
-router.get('/', (req, res) => {
-  res.send('Hello world aaaaaaa');
-});
+const verifyToken = require('../middleware/verify');
 
 router.route('/signup')
   .get(
@@ -27,21 +29,12 @@ router.route('/login')
 
 router.get('/posts', getPosts);
 
-router.get('/homePage', (req, res, next) => {
-  if (req.cookies.token) {
-    jwt.verify(req.cookies.token, process.env.SECRET_KEY, (err, decoded) => {
-      if (err) {
-        res.clearCookie('token').redirect('/');
-      } else {
-        res.status(200).sendFile(join(__dirname, '..', '..', 'public', 'pages', 'homePage.html'));
-      }
-    });
-  } else {
-    console.log(req.cookies);
-    res.redirect('/');
-  }
+router.get('/homePage', verifyToken, (req, res) => {
+  res.status(200).sendFile(join(__dirname, '..', '..', 'public', 'pages', 'homePage.html'));
 });
 
+router.post('/users/post', verifyToken, addPost);
+router.get('/users/user-name', verifyToken, getUserName);
 router.get('/logout', logout);
 
 module.exports = router;

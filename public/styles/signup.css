@@ -20,11 +20,9 @@
 }
 
 .form_textInput {
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
   outline: 0;
   width: 100%;
-  -webkit-appearance: none;
   appearance: none;
   transition: all 0.2s ease-in-out;
   height: 30px;
@@ -45,11 +43,9 @@
 }
 
 .form_textarea {
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
   outline: 0;
   width: 100%;
-  -webkit-appearance: none;
   appearance: none;
   transition: all 0.2s ease-in-out;
   padding: 22px 12px 10px;
@@ -94,18 +90,6 @@
   color: red;
   font-size: 18px;
   margin-top: 12px;
-}
-
-.trigger {
-  text-align: center;
-  padding: 7px 13px;
-  background: #3e3e3e;
-  color: #fff;
-  font-size: 15px;
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  font-family: system-ui;
 }
 
 .modal {

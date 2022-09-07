@@ -152,6 +152,9 @@ nav .search__bar input {
     width: 35px;
     height: 35px;
 }
+.user__info p {
+    color: black;
+}
 
 #logout__btn {
     outline: none;
@@ -300,7 +303,117 @@ text-align: center;
     height: 24px;
     cursor: pointer;
 }
+  
+  .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    text-align: center;
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .modal-content .reddit__icon {
+    color: #FF4500;
+    font-size: 2rem;
+    margin: 48px 0
+  }
+  
+  .close-button {
+    align-self: flex-end;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 1.5rem;
+    color: rgba(189, 8, 8, .8);
+  }
+  
+  .close-button:hover {
+    color: rgb(245, 4, 4);
+  }
+  
+  .show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  }
+  
+  .form_label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    font-family: system-ui;
+    font-size: 24px;
+    color: orange;
+    line-height: 46px;
+    text-align: start;
+  }
 
+  .form_textarea {
+    transform: translateZ(0);
+    outline: 0;
+    width: 100%;
+    appearance: none;
+    transition: all 0.2s ease-in-out;
+    padding: 22px 12px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: #fcfcfb;
+    height: 70px;
+  }
+  .form_textInput {
+    transform: translateZ(0);
+    outline: 0;
+    width: 100%;
+    appearance: none;
+    transition: all 0.2s ease-in-out;
+    height: 30px;
+    padding: 22px 12px 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: #fcfcfb;
+  }
+
+  .submit_button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 12px;
+    font-family: system-ui;
+    font-size: 24px;
+    background: #6c6e70;
+    color: #9fa1a3;
+    border: none;
+    line-height: 46px;
+    height: 48px;
+    width: 30%;
+    margin: auto;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.4s;
+    margin-top: 32px;
+  }
 @media only screen and (max-width: 768px) {
 
     /* .reddit__logo, */

@@ -28,7 +28,7 @@ const generateCards = (data) => {
 
   const secondParaSpan = createElement('span');
   secondParaSpan.setAttribute('class', 'card__created_by__name');
-  secondParaSpan.textContent = 'mahmoud';
+  secondParaSpan.textContent = data.username;
   secondPara.appendChild(secondParaSpan);
   cardContent.appendChild(secondPara);
 

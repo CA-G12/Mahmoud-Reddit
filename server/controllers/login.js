@@ -19,7 +19,7 @@ const logIn = (req, res) => {
             bcrypt.compare(password, data.password)
               .then((result) => {
                 if (result) {
-                  jwt.sign({ isLogged: 'true', user_id: data.id }, process.env.SECRET_KEY, (err, token) => {
+                  jwt.sign({ isLogged: 'true', user_id: data.id, username: data.username }, process.env.SECRET_KEY, (err, token) => {
                     if (err) {
                       console.log({ error: err });
                     }
