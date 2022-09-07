@@ -55,6 +55,46 @@ nav .search__bar input {
     border: 1px solid transparent;
     background-color: inherit
 }
+.create__post {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #5e6061;
+    background-color: inherit;
+    padding: 5px 10px;
+    border-radius: 2px;
+}
+
+.create__post:hover {
+    background-color: #DAE0E6;
+}
+
+[data-title]:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: #111;
+    color: #fff;
+    font-size: 1rem;
+    position: absolute;
+    padding: 2px 5px;
+    bottom: -1.6rem;
+    left: -40%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+    border-radius: 5px;
+}
+[data-title] {
+    position: relative;
+}
 
 .user__section {
     width: 25%;
