@@ -25,7 +25,6 @@ router.route('/login')
   )
   .post(logIn);
 
-router.get('/logout', logout);
 router.get('/posts', getPosts);
 
 router.get('/homePage', (req, res, next) => {
@@ -42,5 +41,7 @@ router.get('/homePage', (req, res, next) => {
     res.redirect('/');
   }
 });
+
+router.get('/logout', logout);
 
 module.exports = router;
