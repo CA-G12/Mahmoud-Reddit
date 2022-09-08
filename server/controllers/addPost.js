@@ -1,4 +1,4 @@
-const addPostQuery = require('../database/queries/addPostQuery');
+const { addPostQuery } = require('../database/queries');
 
 const addPost = (req, res) => {
   const { content, image } = req.body;
