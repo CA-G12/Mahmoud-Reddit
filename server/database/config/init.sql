@@ -15,6 +15,7 @@ CREATE TABLE "posts"(
     "content" TEXT NOT NULL,
     "image" VARCHAR(255),
     "created_by" INTEGER NOT NULL,
+    "timestapm" VARCHAR(100) NOT NULl,
     "deleted" BOOLEAN NOT NULL DEFAULT false,
     CONSTRAINT fk_user_id FOREIGN KEY (created_by) REFERENCES users(id)
 );
@@ -42,29 +43,29 @@ INSERT INTO users (username, password, email, about) values
 ('test2', '$2b$10$eDuZGepJ4sbQtA0PlZH4nugOKOHN1fx0TrXtx5Lx6I.O3Qom.eN3K', 'test2@gmail.com' , 'test'),
 ('test3', '$2b$10$UCli9.UB4HudL/cNKyuWx.VxsZG.q4f7/DZnzzMtovK6/WXIjDXS2', 'test3@gmail.com', 'test'); 
 
-INSERT INTO posts(content, image, created_by) values 
+INSERT INTO posts(content, image, created_by,timestapm ) values 
 ('13 years ago today, a true patriot lost his life. Rest in Peace big guy.'
 ,'https://i.redd.it/dx8cabvncnl91.jpg'
-,'1'),
+,'1', '1662631761492'),
 
 ('13 years ago today, a true patriot lost his life. Rest in Peace big guy.'
 ,'https://i.redd.it/dx8cabvncnl91.jpg'
-,'2'),
+,'2', '1662631761492'),
 
 ('13 years ago today, a true patriot lost his life. Rest in Peace big guy.'
 ,'https://i.redd.it/dx8cabvncnl91.jpg'
-,'2'),
+,'2', '1662631761492'),
 
 ('13 years ago today, a true patriot lost his life. Rest in Peace big guy.'
 ,'https://i.redd.it/dx8cabvncnl91.jpg'
-,'3'),
+,'3', '1662631761492'),
 
 ('13 years ago today, a true patriot lost his life. Rest in Peace big guy.'
 ,'https://i.redd.it/dx8cabvncnl91.jpg'
-,'3'),
+,'3', '1662631761492'),
 
 ('13 years ago today, a true patriot lost his life. Rest in Peace big guy.'
 ,'https://i.redd.it/dx8cabvncnl91.jpg'
-,'3');
+,'3', '1662631761492');
 
 COMMIT;
