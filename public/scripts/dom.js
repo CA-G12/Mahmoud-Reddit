@@ -1,8 +1,34 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 const container = document.querySelector('.container');
 
 const createElement = (tag) => document.createElement(tag);
 
+const timeCalc = (postData, element) => {
+  const currentDate = new Date().getTime();
+  // console.log(currentDate);
+  let difference = currentDate - postData;
+
+  difference /= 1000;
+  const hourDifference = Math.floor(difference / 3600);
+  difference -= hourDifference * 3600;
+  const minuteDifference = Math.floor(difference / 60);
+  difference -= minuteDifference * 60;
+  if (hourDifference) {
+    if (hourDifference > 24) {
+      const days = hourDifference / 24;
+      const floorDays = Math.floor(days);
+      const diffDays = days - floorDays;
+      const hour = Math.floor(diffDays * 24);
+      element.textContent = `${floorDays} days : ${hour} hours ago by `;
+    }
+    element.textContent = `${hourDifference} hours ago by `;
+  } else if (minuteDifference) {
+    element.textContent = `${minuteDifference} mins ago by `;
+  } else {
+    element.textContent = 'just now by ';
+  }
+};
 const generateCards = (data) => {
   const card = createElement('div');
   card.setAttribute('class', 'card');
@@ -24,8 +50,8 @@ const generateCards = (data) => {
     'class',
     'card__created_by',
   );
-  secondPara.textContent = '6 hours ago by ';
-
+  // secondPara.textContent = '6 hours ago by ';
+  timeCalc(data.timestapm, secondPara);
   const secondParaSpan = createElement('span');
   secondParaSpan.setAttribute('class', 'card__created_by__name');
   secondParaSpan.textContent = data.username;

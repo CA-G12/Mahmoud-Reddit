@@ -4,7 +4,6 @@ const userName = document.querySelector('#user_name');
 fetch('/users/user-name')
   .then((data) => data.json())
   .then((data) => {
-    console.log(data);
     userName.textContent = data.username;
   });
 
@@ -49,10 +48,13 @@ createPostBtn.addEventListener('click', () => {
 });
 
 postSubmitButton.addEventListener('click', () => {
+  const timeStamp = new Date().getTime();
   const postData = {
     content: postContent.value,
     image: imgLink.value,
+    timestapm: timeStamp,
   };
+  console.log(postData);
   fetch('/users/post', {
     method: 'POST',
     headers: {
@@ -60,7 +62,8 @@ postSubmitButton.addEventListener('click', () => {
     },
     body: JSON.stringify(postData),
   }).then((data) => data.json())
-    .then(() => {
+    .then((data) => {
+      console.log(data);
       window.location.reload();
     })
     .catch((err) => console.log({ error: err }));
