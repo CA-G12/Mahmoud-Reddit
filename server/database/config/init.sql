@@ -68,4 +68,13 @@ INSERT INTO posts(content, image, created_by,timestapm ) values
 ,'https://i.redd.it/dx8cabvncnl91.jpg'
 ,'3', '1662631761492');
 
+INSERT INTO likes (post_id, user_id) values 
+('1', '1'),
+('1', '2'),
+('2', '1'),
+('2', '2'), 
+('2', '3'),
+('3', '1'); 
+
+
 COMMIT;

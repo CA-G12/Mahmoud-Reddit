@@ -30,6 +30,8 @@ const timeCalc = (postData, element) => {
   }
 };
 const generateCards = (data) => {
+  const user = JSON.parse(localStorage.getItem('user'));
+
   const card = createElement('div');
   card.setAttribute('class', 'card');
   if (data.image) {
@@ -79,11 +81,50 @@ const generateCards = (data) => {
   const arrowUpBtn = createElement('button');
   arrowUpBtn.setAttribute('type', 'button');
   arrowUpBtn.innerHTML = '<i class="fa-solid fa-angle-up"></i>';
+  if (user?.userId) {
+    const isUserLikesPost = data.post_likes.find((like) => like.userId === user.userId);
+
+    if (isUserLikesPost) {
+      arrowUpBtn.style.color = 'red';
+    }
+  }
+  arrowUpBtn.addEventListener('click', () => {
+    const isUserLikesPost = data.post_likes.find((like) => like.userId === user?.userId);
+
+    const status = isUserLikesPost ? 'remove' : 'add';
+    if (user?.userId) {
+      fetch('/posts/like', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          postId: data.id, userId: user?.userId, status, likeId: isUserLikesPost?.id || null,
+        }),
+      }).then((postData) => postData.json())
+        .then((postData) => {
+          // Get ALL posts Request
+          container.textContent = '';
+          fetch('/posts')
+            .then((postsData) => postsData.json())
+            .then((postsData) => {
+              postsData.forEach((element) => {
+                // eslint-disable-next-line no-undef
+                generateCards(element);
+              });
+            })
+            .catch((err) => console.log({ err }));
+        })
+        .catch((err) => console.log({ error: err }));
+    } else {
+      alert('please login to add likes');
+    }
+  });
   cardOperationLikes.appendChild(arrowUpBtn);
 
   const likesNum = createElement('p');
   likesNum.setAttribute('class', 'card__operation__number');
-  likesNum.textContent = '23k';
+  likesNum.textContent = data.post_likes.filter((l) => l.id).length || 0;
   cardOperationLikes.appendChild(likesNum);
 
   const arrowDownBtn = createElement('button');

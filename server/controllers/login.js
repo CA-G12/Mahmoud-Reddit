@@ -14,6 +14,7 @@ const logIn = (req, res) => {
         .then((data) => data.rows[0])
         .then((data) => {
           if (!data) {
+            res.clearCookie('token');
             res.status(401).json({ msg: 'Auth failed. User not found.' });
           } else {
             bcrypt.compare(password, data.password)
@@ -28,12 +29,14 @@ const logIn = (req, res) => {
                     res.status(200).json({ msg: 'Auth Successful' });
                   });
                 } else {
+                  res.clearCookie('token');
                   res.status(403).json({ msg: 'Auth failed. Check email and password' });
                 }
               });
           }
         });
     }).catch((err) => {
+      res.clearCookie('token');
       console.log(err);
       res.status(500).send({ msg: 'Something went wrong in login' });
     // console.log(err.details.message);

@@ -15,4 +15,4 @@ const dbBuild = () => {
   return connection.query(sqlBuild);
 };
 
-module.exports = { dbBuild };
+module.exports = dbBuild;

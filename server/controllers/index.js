@@ -4,6 +4,7 @@ const logIn = require('./login');
 const logout = require('./logout');
 const addPost = require('./addPost');
 const getUserName = require('./getUserName');
+const updatePostLike = require('./updatePostLike');
 
 module.exports = {
   getPosts,
@@ -12,4 +13,5 @@ module.exports = {
   logout,
   addPost,
   getUserName,
+  updatePostLike,
 };
