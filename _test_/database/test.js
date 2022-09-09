@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
+require('dotenv').config();
 const connection = require('../../server/database/config/connection');
-const { dbBuild } = require('../../server/database/config/build');
-
+const dbBuild = require('../../server/database/config/build');
 const {
   getPostsQuery,
   addPostQuery,
@@ -10,19 +10,18 @@ const {
 } = require('../../server/database/queries');
 
 beforeAll(() => dbBuild());
-afterAll(() => connection.end());
 
 test('test get all posts query', () => {
   getPostsQuery()
     .then((data) => {
-      expect(data.rows.length).toBe(6);
+      expect(data.rows[0].username).toBe('test1');
     });
 });
 
 test('test add posts query', () => {
   addPostQuery({ content: 'dummy content' })
     .then((data) => {
-      expect(data.rows[7]).toMatchObject({ content: 'dummy content' });
+      expect(data.rows[0]).toMatchObject({ content: 'dummy content' });
     });
 });
 
@@ -49,3 +48,5 @@ test('test check user if exists query', () => {
       expect(data.rows[0]).toMatchObject({ email: 'mahmoud@gmail.com' });
     });
 });
+
+afterAll(() => connection.end());

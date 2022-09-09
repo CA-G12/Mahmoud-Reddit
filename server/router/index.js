@@ -7,6 +7,7 @@ const {
   logout,
   addPost,
   getUserName,
+  updatePostLike,
 } = require('../controllers');
 
 const verifyToken = require('../middleware/verify');
@@ -34,6 +35,7 @@ router.get('/homePage', verifyToken, (req, res) => {
 });
 
 router.post('/users/post', verifyToken, addPost);
+router.post('/posts/like', verifyToken, updatePostLike);
 router.get('/users/user-name', verifyToken, getUserName);
 router.get('/logout', logout);
 

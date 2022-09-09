@@ -17,7 +17,6 @@ loginBtn.addEventListener('click', () => {
 fetch('/posts')
   .then((data) => data.json())
   .then((data) => {
-    console.log(data);
     data.forEach((element) => {
       generateCards(element);
     });

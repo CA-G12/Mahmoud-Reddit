@@ -4,6 +4,7 @@ const userName = document.querySelector('#user_name');
 fetch('/users/user-name')
   .then((data) => data.json())
   .then((data) => {
+    localStorage.setItem('user', JSON.stringify(data));
     userName.textContent = data.username;
   });
 
@@ -24,6 +25,7 @@ const logoutBtn = document.querySelector('#logout__btn');
 logoutBtn.addEventListener('click', () => {
   fetch('/logout')
     .then(window.location.href = '/');
+  localStorage.removeItem('user');
 });
 
 // Add post Request
@@ -54,7 +56,7 @@ postSubmitButton.addEventListener('click', () => {
     image: imgLink.value,
     timestapm: timeStamp,
   };
-  console.log(postData);
+
   fetch('/users/post', {
     method: 'POST',
     headers: {

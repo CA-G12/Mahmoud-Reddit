@@ -1,6 +1,9 @@
 const getUserName = (req, res) => {
   const userName = req.decoded.username;
-  res.json({ username: userName });
+  // eslint-disable-next-line camelcase
+  const { user_id } = req.decoded;
+  // eslint-disable-next-line camelcase
+  res.json({ username: userName, userId: user_id });
 };
 
 module.exports = getUserName;
